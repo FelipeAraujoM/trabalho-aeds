@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1719234528 source:c:\users\felip\downloads\faculdade\aeds\trabalho-aeds\main.cpp
+	<iostream>
+	<locale.h>
+	"cliente.hpp"
+
+1719233245 c:\users\felip\downloads\faculdade\aeds\trabalho-aeds\cliente.cpp
+	<iostream>
+
+1719234918 source:c:\users\felip\downloads\faculdade\aeds\trabalho-aeds\cliente.cpp
+	<iostream>
+	"cliente.hpp"
+
+1719234918 c:\users\felip\downloads\faculdade\aeds\trabalho-aeds\cliente.hpp
+
+1719234918 source:c:\users\felip\downloads\faculdade\aeds\trabalho-aeds\funcionario.cpp
+	<iostream>
+	"cliente.hpp"
+
+1719234757 source:c:\users\felip\downloads\faculdade\aeds\trabalho-aeds\estadia.cpp
+
+1719234918 source:c:\users\felip\downloads\faculdade\aeds\trabalho-aeds\quarto.cpp
+	<iostream>
+	"cliente.hpp"
+
