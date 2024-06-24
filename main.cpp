@@ -28,6 +28,9 @@ int main()
     case 3:
         sessaoQuarto();
         break;
+    case 4:
+        sessaoEstadia();
+        break;
     default:
         cout << "Valor inválido";
         break;

@@ -32,7 +32,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="cliente.cpp" />
+		<Unit filename="cliente.hpp" />
+		<Unit filename="estadia.cpp" />
+		<Unit filename="funcionario.cpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="quarto.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
