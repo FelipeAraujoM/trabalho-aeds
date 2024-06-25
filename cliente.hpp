@@ -1,24 +1,26 @@
 #ifndef CLIENTE_HPP
 #define CLIENTE_HPP
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 void sessaoCliente();
 void cadastroCliente();
 void buscarCliente();
+void calcularPontosFidelidade();
 
 void sessaoFuncionario();
 void cadastroFuncionario();
 void buscarFuncionario();
 
-void sessaoQuarto();
 void cadastroQuarto();
-void buscarQuarto();
+void baixaEstadia();
 
 void sessaoEstadia();
 void cadastroEstadia();
-void verificarPreco();
+
+bool numCadastrado(int id);
 
 class Cliente {
 public:
@@ -33,11 +35,12 @@ public:
     int id;
     char nome[50];
     int telefone;
-    char cargo;
+    char cargo[50];
     float salario;
 };
 
 class Estadia {
+public:
     int id;
     int diaEntrada;
     int mesEntrada;
@@ -47,13 +50,15 @@ class Estadia {
     int anoSaida;
     int idCliente;
     int numQuarto;
+    int qtdHospedes;
 };
 
 class Quarto {
+public:
     int numQuarto;
     int qtdHospedes;
-    int valDiaria;
-    bool status;
+    float valDiaria;
+    string status;
 };
 
 #endif

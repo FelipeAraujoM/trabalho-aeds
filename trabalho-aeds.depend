@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1719235885 source:c:\users\felip\downloads\faculdade\aeds\trabalho-aeds\main.cpp
+1719328621 source:c:\users\felip\downloads\faculdade\aeds\trabalho-aeds\main.cpp
 	<iostream>
 	<locale.h>
 	"cliente.hpp"
@@ -7,23 +7,31 @@
 1719233245 c:\users\felip\downloads\faculdade\aeds\trabalho-aeds\cliente.cpp
 	<iostream>
 
-1719246665 source:c:\users\felip\downloads\faculdade\aeds\trabalho-aeds\cliente.cpp
+1719339910 source:c:\users\felip\downloads\faculdade\aeds\trabalho-aeds\cliente.cpp
 	<iostream>
 	<fstream>
+	<sstream>
 	"cliente.hpp"
 
-1719242701 c:\users\felip\downloads\faculdade\aeds\trabalho-aeds\cliente.hpp
+1719339829 c:\users\felip\downloads\faculdade\aeds\trabalho-aeds\cliente.hpp
 	<iostream>
+	<string>
 
-1719234918 source:c:\users\felip\downloads\faculdade\aeds\trabalho-aeds\funcionario.cpp
+1719337384 source:c:\users\felip\downloads\faculdade\aeds\trabalho-aeds\funcionario.cpp
 	<iostream>
+	<fstream>
+	<sstream>
 	"cliente.hpp"
 
-1719235883 source:c:\users\felip\downloads\faculdade\aeds\trabalho-aeds\estadia.cpp
+1719340528 source:c:\users\felip\downloads\faculdade\aeds\trabalho-aeds\estadia.cpp
 	<iostream>
+	<fstream>
+	<sstream>
+	<string>
 	"cliente.hpp"
 
-1719234918 source:c:\users\felip\downloads\faculdade\aeds\trabalho-aeds\quarto.cpp
+1719333625 source:c:\users\felip\downloads\faculdade\aeds\trabalho-aeds\quarto.cpp
 	<iostream>
 	"cliente.hpp"
+	<fstream>
 

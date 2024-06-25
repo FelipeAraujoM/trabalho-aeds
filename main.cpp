@@ -13,7 +13,7 @@ int main()
     cout << "Digite:" << endl;
     cout << "1 - Sessão do cliente" << endl;
     cout << "2 - Sessão do funcionário" << endl;
-    cout << "3 - Sessão dos quartos" << endl;
+    cout << "3 - Cadastrar quarto" << endl;
     cout << "4 - Cadastrar uma estadia" << endl;
     cout << "5 - Finalizar" << endl;
     cin >> menu;
@@ -26,11 +26,13 @@ int main()
         sessaoFuncionario();
         break;
     case 3:
-        sessaoQuarto();
+        cadastroQuarto();
         break;
     case 4:
         sessaoEstadia();
         break;
+    case 5:
+        exit(1);
     default:
         cout << "Valor inválido";
         break;

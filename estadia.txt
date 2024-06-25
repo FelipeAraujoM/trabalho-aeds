@@ -1,0 +1,7 @@
+Código do Cliente: 888
+Número do Quarto: 111
+Quantidade de Hospedes: 3
+Data de Entrada: 10/10/2020
+Data de Saída: 15/10/2020
+Quantidade de Diárias: 5
+

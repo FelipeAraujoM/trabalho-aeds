@@ -1,33 +1,60 @@
 #include <iostream>
 #include "cliente.hpp"
+#include <fstream>
 
 using namespace std;
 
-void sessaoQuarto() {
-    int menuQuarto;
-
-    cout << "Digite:" << endl;
-    cout << "1 - Cadastrar um quarto" << endl;
-    cout << "2 - Ver o status dos quartos" << endl;
-    cin >> menuQuarto;
-
-    switch (menuQuarto) {
-    case 1:
-        cadastroQuarto();
-        break;
-    case 2:
-        buscarQuarto();
-        break;
-    default:
-        cout << "Valor inválido";
-        break;
+bool numCadastrado(int id) {
+    ifstream arqQuarto("quarto.txt");
+    if (!arqQuarto.is_open()) {
+        cout << "Erro ao abrir arquivo para leitura" << endl;
+        return false;
     }
+
+    string line;
+    while (getline(arqQuarto, line)) {
+        if (line.find("Número: " + to_string(id)) != string::npos) {
+            arqQuarto.close();
+            return true;
+        }
+    }
+
+    arqQuarto.close();
+    return false;
 }
 
 void cadastroQuarto() {
-    cout << "1";
-}
+    Quarto quarto;
 
-void buscarQuarto() {
-    cout << "2";
+    cout << "Digite o número do quarto: ";
+    cin >> quarto.numQuarto;
+
+    if(numCadastrado(quarto.numQuarto)) {
+        cout << "Quarto já cadastrado" << endl;
+        return;
+    }
+
+    cout << "Digite a lotação máxima do quarto: ";
+    cin >> quarto.qtdHospedes;
+
+    cout << "Digite o valor da diária: ";
+    cin >> quarto.valDiaria;
+
+    quarto.status = "Desocupado";
+
+    ofstream arqQuarto("quarto.txt", ios::app);
+
+    if(arqQuarto.is_open()) {
+        arqQuarto << "Número: " << quarto.numQuarto << endl;
+        arqQuarto << "Número de Hospedes: " << quarto.qtdHospedes << endl;
+        arqQuarto << "Diária: " << quarto.valDiaria << endl;
+        arqQuarto << "Status: " << quarto.status << endl;
+        arqQuarto << endl;
+
+        arqQuarto.close();
+
+        cout << "Quarto cadastrado com sucesso" << endl;
+    } else {
+        cout << "Erro ao abrir arquivo para escrita";
+    }
 }
