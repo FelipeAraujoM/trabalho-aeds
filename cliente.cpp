@@ -11,7 +11,6 @@ void sessaoCliente() {
     cout << "Digite:" << endl;
     cout << "1 - Cadastrar um cliente" << endl;
     cout << "2 - Procurar um cliente" << endl;
-    cout << "3 - Calcular pontos de fidelidade" << endl;
     cin >> menuCliente;
 
     switch (menuCliente) {
@@ -20,9 +19,6 @@ void sessaoCliente() {
         break;
     case 2:
         buscarCliente();
-        break;
-    case 3:
-        calcularPontosFidelidade();
         break;
     default:
         cout << "Valor inválido" << endl;
@@ -140,46 +136,4 @@ void buscarCliente() {
     arqEstadia.close();
 
     cout << "Quantidade de estadias realizadas: " << qtdEstadias << endl;
-}
-
-void calcularPontosFidelidade() {
-    int idCliente;
-    cout << "Digite o ID do cliente: ";
-    cin >> idCliente;
-
-    ifstream arqEstadia("estadia.txt");
-    if (!arqEstadia.is_open()) {
-        cout << "Erro ao abrir arquivo de estadias para leitura" << endl;
-        return;
-    }
-
-    string line;
-    int totalPontos = 0;
-    bool encontrouCliente = false;
-
-    while (getline(arqEstadia, line)) {
-        if (line.find("Código do Cliente: " + to_string(idCliente)) != string::npos) {
-            encontrouCliente = true;
-            int dias = 0;
-
-            for (int i = 0; i < 5; ++i) {
-                getline(arqEstadia, line);
-                if (line.find("Quantidade de Diárias: ") != string::npos) {
-                    istringstream iss(line);
-                    string temp;
-                    iss >> temp >> temp >> temp >> temp >> dias;
-                    totalPontos += dias * 10;
-                }
-            }
-        }
-    }
-
-    arqEstadia.close();
-
-    if (!encontrouCliente) {
-        cout << "Cliente não encontrado ou não possui estadias registradas." << endl;
-        return;
-    }
-
-    cout << "Total de pontos para o cliente " << idCliente << ": " << totalPontos << endl;
 }

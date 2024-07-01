@@ -1,5 +1,6 @@
-ID: 888
+ID: 111
 Nome: jorge
-Endereço: jidjai
-Telefone: 8938932
+Endereço: rua blablabla
+Telefone: 319999999
 
+ID: 111 - Pontos Fidelidade: 20

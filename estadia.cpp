@@ -147,6 +147,13 @@ void cadastroEstadia() {
     cout << "Data de saída (DD MM AAAA): ";
     cin >> estadia.diaSaida >> estadia.mesSaida >> estadia.anoSaida;
 
+    if (estadia.anoSaida < estadia.anoEntrada ||
+        (estadia.anoSaida == estadia.anoEntrada && estadia.mesSaida < estadia.mesEntrada) ||
+        (estadia.anoSaida == estadia.anoEntrada && estadia.mesSaida == estadia.mesEntrada && estadia.diaSaida < estadia.diaEntrada)) {
+        cout << "Erro: A data de saída não pode ser menor que a data de entrada" << endl;
+        return;
+    }
+
     int dias = calcularDiasEntreDatas(estadia.diaEntrada, estadia.mesEntrada, estadia.anoEntrada, estadia.diaSaida, estadia.mesSaida, estadia.anoSaida);
 
     cout << "Quartos Desocupados:" << endl;
@@ -171,6 +178,9 @@ void cadastroEstadia() {
         arqEstadia.close();
 
         cout << "Estadia cadastrada com sucesso" << endl;
+
+        // Chama a função para registrar a quantidade de dias multiplicada por 10
+        registrarDiasCliente(estadia.idCliente, dias);
     } else {
         cout << "Erro ao abrir arquivo para escrita" << endl;
     }
@@ -231,4 +241,19 @@ void baixaEstadia() {
         cout << "Estadia não encontrada para o cliente " << idCliente << endl;
         remove("tempEstadia.txt");
     }
+}
+
+void registrarDiasCliente(int idCliente, int dias) {
+    ofstream arqCliente("cliente.txt", ios::app);
+
+    if (!arqCliente.is_open()) {
+        cout << "Erro ao abrir arquivo para escrita" << endl;
+        return;
+    }
+
+    int diasMultiplicados = dias * 10;
+
+    arqCliente << "ID: " << idCliente << " - Pontos Fidelidade: " << diasMultiplicados << endl;
+
+    arqCliente.close();
 }

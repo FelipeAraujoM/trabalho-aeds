@@ -16,9 +16,12 @@ void buscarFuncionario();
 
 void cadastroQuarto();
 void baixaEstadia();
+int calcularDiasEntreDatas(int diaEntrada, int mesEntrada, int anoEntrada,
+                           int diaSaida, int mesSaida, int anoSaida);
 
 void sessaoEstadia();
 void cadastroEstadia();
+void registrarDiasCliente(int idCliente, int dias);
 
 bool numCadastrado(int id);
 
